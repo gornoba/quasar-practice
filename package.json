@@ -1,0 +1,40 @@
+{
+  "name": "quasar-project",
+  "version": "0.0.1",
+  "description": "A Quasar Project",
+  "productName": "Quasar App",
+  "author": "HyunHoo Im <litinglabs03@gmail.com>",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext .js,.ts,.vue ./",
+    "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
+    "dev": "quasar dev",
+    "build": "quasar build",
+    "build:pwa": "quasar build -m pwa"
+  },
+  "dependencies": {
+    "axios": "^1.6.8",
+    "pinia": "^2.1.7",
+    "@quasar/extras": "^1.16.11",
+    "quasar": "^2.15.2",
+    "vue": "^3.4.23",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.7.0",
+    "@typescript-eslint/parser": "^7.7.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-vue": "^9.25.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.5",
+    "@types/node": "^20.12.7",
+    "@quasar/app-vite": "^1.8.0",
+    "autoprefixer": "^10.4.19",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": "^20 || ^18 || ^16 || ^14.19",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}
