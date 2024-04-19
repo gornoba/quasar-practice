@@ -12,7 +12,8 @@
       <q-list>
         <q-item clickable v-close-popup>
           <q-item-section>
-            <router-link to="typography">Home</router-link>
+            <router-link to="typography">Typography</router-link>
+            <router-link to="color-palette">Color Palette</router-link>
           </q-item-section>
         </q-item>
       </q-list>

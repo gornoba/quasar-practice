@@ -9,6 +9,10 @@ const routes: RouteRecordRaw[] = [
         path: '/typography',
         component: () => import('components/TypographyVue.vue'),
       },
+      {
+        path: '/color-palette',
+        component: () => import('components/ColorPaletteVue.vue'),
+      },
     ],
   },
 
