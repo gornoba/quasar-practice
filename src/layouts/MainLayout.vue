@@ -16,6 +16,7 @@
             <router-link to="color-palette">Color Palette</router-link>
             <router-link to="dark-mode">Dark Mode</router-link>
             <router-link to="spacing">Spacing</router-link>
+            <router-link to="shadow">Shadow</router-link>
           </q-item-section>
         </q-item>
       </q-list>

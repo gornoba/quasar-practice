@@ -21,6 +21,10 @@ const routes: RouteRecordRaw[] = [
         path: '/spacing',
         component: () => import('components/SpacingVue.vue'),
       },
+      {
+        path: '/shadow',
+        component: () => import('components/ShadowVue.vue'),
+      },
     ],
   },
 
