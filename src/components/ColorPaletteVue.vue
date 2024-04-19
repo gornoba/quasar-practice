@@ -1,4 +1,11 @@
-<script setup></script>
+<script setup>
+import { colors } from 'quasar';
+
+const { getPaletteColor } = colors;
+
+console.log(getPaletteColor('primary')); // '#1976d2'
+console.log(getPaletteColor('red-2')); // '#ffcdd2'
+</script>
 <template>
   <div>
     <div class="bg-primary">primary</div>

@@ -13,6 +13,10 @@ const routes: RouteRecordRaw[] = [
         path: '/color-palette',
         component: () => import('components/ColorPaletteVue.vue'),
       },
+      {
+        path: '/dark-mode',
+        component: () => import('components/DarkModeVue.vue'),
+      },
     ],
   },
 

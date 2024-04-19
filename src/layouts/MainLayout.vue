@@ -14,6 +14,7 @@
           <q-item-section>
             <router-link to="typography">Typography</router-link>
             <router-link to="color-palette">Color Palette</router-link>
+            <router-link to="dark-mode">Dark Mode</router-link>
           </q-item-section>
         </q-item>
       </q-list>
