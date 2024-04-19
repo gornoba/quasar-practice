@@ -17,6 +17,10 @@ const routes: RouteRecordRaw[] = [
         path: '/dark-mode',
         component: () => import('components/DarkModeVue.vue'),
       },
+      {
+        path: '/spacing',
+        component: () => import('components/SpacingVue.vue'),
+      },
     ],
   },
 
