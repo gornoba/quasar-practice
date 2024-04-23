@@ -1,6 +1,9 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header reveal elevated class="bg-grey-3 text-primary">
+      여기는 헤더 <q-icon name="ion-logo-youtube" />
+    </q-header>
+    <!-- <q-header elevated>
       <q-toolbar>
         <q-toolbar-title> Quasar App </q-toolbar-title>
 
@@ -23,12 +26,15 @@
     </q-drawer>
     <q-page-container>
       <router-view />
-    </q-page-container>
+    </q-page-container> -->
+    <q-footer reveal elevated class="bg-grey-3 text-primary">
+      여기는 푸터 <q-icon name="laptop_chromebook" />
+    </q-footer>
   </q-layout>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+// import { ref } from 'vue';
 
-const leftDrawerOpen = ref(false);
+// const leftDrawerOpen = ref(false);
 </script>
