@@ -1,17 +1,35 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header reveal elevated class="bg-grey-3 text-primary">
-      여기는 헤더 <q-icon name="ion-logo-youtube" />
-    </q-header>
-    <!-- <q-header elevated>
+    <q-header
+      reveal
+      elevated
+      :class="$q.dark.isActive ? 'bg-secondary' : 'bg-black'"
+    >
       <q-toolbar>
-        <q-toolbar-title> Quasar App </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+        <q-btn flat @click="drawerLeft = !drawerLeft" round dense icon="menu" />
+        <q-toolbar-title>
+          <div>
+            <span class="q-pr-sm">여기는 헤더</span
+            ><q-icon name="ion-logo-youtube"></q-icon>
+          </div>
+        </q-toolbar-title>
+        <q-btn
+          flat
+          @click="drawerRight = !drawerRight"
+          round
+          dense
+          icon="menu"
+        />
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
+    <q-drawer
+      v-model="drawerLeft"
+      show-if-above
+      :width="200"
+      :breakpoint="700"
+      elevated
+    >
       <q-list>
         <q-item clickable v-close-popup>
           <q-item-section>
@@ -24,9 +42,11 @@
         </q-item>
       </q-list>
     </q-drawer>
+
     <q-page-container>
       <router-view />
-    </q-page-container> -->
+    </q-page-container>
+
     <q-footer reveal elevated class="bg-grey-3 text-primary">
       여기는 푸터 <q-icon name="laptop_chromebook" />
     </q-footer>
@@ -34,7 +54,8 @@
 </template>
 
 <script setup lang="ts">
-// import { ref } from 'vue';
+import { ref } from 'vue';
 
-// const leftDrawerOpen = ref(false);
+const drawerLeft = ref(false);
+const drawerRight = ref(false);
 </script>
