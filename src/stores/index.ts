@@ -1,6 +1,8 @@
-import { store } from 'quasar/wrappers'
-import { createPinia } from 'pinia'
+import { store } from 'quasar/wrappers';
+import { createPinia } from 'pinia';
 import { Router } from 'vue-router';
+import debounce from 'lodash/debounce';
+import { DebouncedFunc } from 'lodash';
 
 /*
  * When adding new properties to stores, you should also
@@ -10,6 +12,12 @@ import { Router } from 'vue-router';
 declare module 'pinia' {
   export interface PiniaCustomProperties {
     readonly router: Router;
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  export interface DefineStoreOptionsBase<S, Store> {
+    // 모든 액션의 ms 값을 정의할 수 있음.
+    debounce?: Partial<Record<keyof StoreActions<Store>, number>>;
   }
 }
 
@@ -23,10 +31,39 @@ declare module 'pinia' {
  */
 
 export default store((/* { ssrContext } */) => {
-  const pinia = createPinia()
+  const pinia = createPinia();
 
-  // You can add Pinia plugins here
-  // pinia.use(SomePiniaPlugin)
+  pinia.use(({ store }) => {
+    const originalReset = store.$reset;
 
-  return pinia
-})
+    store.$reset = () => {
+      originalReset.call(store);
+    };
+
+    return store;
+  });
+
+  pinia.use(({ options, store }) => {
+    if (options.debounce) {
+      // 새로운 것으로 액션을 재정의 함.
+      return Object.keys(options.debounce).reduce(
+        (
+          debouncedActions: Record<
+            string,
+            DebouncedFunc<(...args: any[]) => any>
+          >,
+          action: string,
+        ) => {
+          debouncedActions[action] = debounce(
+            store[action],
+            options.debounce ? options.debounce[action] : 500,
+          );
+          return debouncedActions;
+        },
+        {},
+      );
+    }
+  });
+
+  return pinia;
+});
