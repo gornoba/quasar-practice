@@ -45,6 +45,40 @@
 
     <q-page-container>
       <router-view />
+
+      <q-page-sticky expand position="top">
+        <q-toolbar class="bg-accent text-white">
+          <q-avatar>
+            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
+          </q-avatar>
+          <q-toolbar-title> Page Title </q-toolbar-title>
+        </q-toolbar>
+      </q-page-sticky>
+
+      <q-page-sticky position="top-left" :offset="[18, 18]">
+        <q-btn round color="accent" icon="arrow_back" class="rotate-45" />
+      </q-page-sticky>
+      <q-page-sticky position="top" :offset="[0, 18]">
+        <q-btn round color="accent" icon="arrow_back" class="rotate-90" />
+      </q-page-sticky>
+      <q-page-sticky position="top-right" :offset="[18, 18]">
+        <q-btn round color="accent" icon="arrow_upward" class="rotate-45" />
+      </q-page-sticky>
+      <q-page-sticky position="right" :offset="[18, 0]">
+        <q-btn round color="accent" icon="arrow_upward" class="rotate-90" />
+      </q-page-sticky>
+      <q-page-sticky position="left" :offset="[18, 0]">
+        <q-btn round color="accent" icon="arrow_back" />
+      </q-page-sticky>
+      <q-page-sticky position="bottom-left" :offset="[18, 18]">
+        <q-btn round color="accent" icon="arrow_forward" class="rotate-135" />
+      </q-page-sticky>
+      <q-page-sticky position="bottom" :offset="[0, 18]">
+        <q-btn round color="accent" icon="arrow_forward" class="rotate-90" />
+      </q-page-sticky>
+      <q-page-sticky position="bottom-right" :offset="[18, 18]">
+        <q-btn round color="accent" icon="arrow_forward" class="rotate-45" />
+      </q-page-sticky>
     </q-page-container>
 
     <q-footer reveal elevated class="bg-grey-3 text-primary">
